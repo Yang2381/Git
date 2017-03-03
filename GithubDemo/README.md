@@ -11,6 +11,13 @@ The following **required** functionality is completed:
 - [X] Table rows for search results should be dynamic height according to the content height.
 - [X] Custom cells should have the proper Auto Layout constraints.
 
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://i.giphy.com/3oKIPdcajfdm0xjQ2Y.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
 ## License
 
     Copyright [2017] [Szu Kai Yang & Ya Wen Chu]
