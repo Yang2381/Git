@@ -8,6 +8,13 @@
 
 import UIKit
 import MBProgressHUD
+extension UISearchBar {
+    public func setSerchTextcolor(color: UIColor) {
+        let clrChange = subviews.flatMap { $0.subviews }
+        guard let sc = (clrChange.filter { $0 is UITextField }).first as? UITextField else { return }
+        sc.textColor = color
+    }
+}
 
 
 protocol SettingsPresentingViewControllerDelegate: class {
@@ -47,10 +54,14 @@ class RepoResultsViewController: UIViewController,UITableViewDataSource,UITableV
         // Initialize the UISearchBar
         searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.tintColor = UIColor(hue: 0.0389, saturation: 0.74, brightness: 0.93, alpha: 1.0)
+        searchBar.setSerchTextcolor(color: UIColor(hue: 0.9333, saturation: 0.13, brightness: 0.93, alpha: 0.5))
+        
 
         // Add SearchBar to the NavigationBar
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
+        
 
         // Perform the first search when the view controller first loads
         doSearch()
@@ -89,7 +100,7 @@ class RepoResultsViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pinK = UIColor(hue: 0.9333, saturation: 0.23, brightness: 0.93, alpha: 1.0)
+        let pinK = UIColor(hue: 0.9333, saturation: 0.13, brightness: 0.93, alpha: 0.2)
         let cell = tableView.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath) as! beibeiCell
         cell.backgroundColor = pinK
         
@@ -101,6 +112,7 @@ class RepoResultsViewController: UIViewController,UITableViewDataSource,UITableV
         cell.pictureView?.setImageWith(URL(string: "\(info_at_row_index.ownerAvatarURL!)")!)
         
         cell.owner.text = ("by \(info_at_row_index.ownerHandle!)")
+        cell.owner.textColor = UIColor(hue: 2.0389, saturation: 0.74, brightness: 1.93, alpha: 1.0)
         return cell
     }
     
