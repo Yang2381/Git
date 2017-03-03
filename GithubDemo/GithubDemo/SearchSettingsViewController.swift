@@ -9,9 +9,12 @@
 import UIKit
 
 class SearchSettingsViewController: UIViewController {
+    
+    var delegate: SettingsPresentingViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +24,7 @@ class SearchSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
