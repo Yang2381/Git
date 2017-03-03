@@ -1,32 +1,15 @@
-# Lab 3 - *Repo-Finder*
+# Lab 5 - *Github Search*
 
-**Repo-Finder** is a GitHub Repo search app using the [GitHub API](https://developer.github.com/v3/search/#search-repositories).
+**Github Sercher** is a GitHub Repo search app using the [GitHub API](https://developer.github.com/v3/search/#search-repositories).
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [x] Table rows for search results should be dynamic height according to the content height.
-- [x] Custom cells should have the proper Auto Layout constraints.
-
-The following **additional** features are implemented:
-
-- [x] List anything else that you can get done to improve the app functionality!
-
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-<img src='http://i.giphy.com/l0HeddL60AxgT2Ovm.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [Giphy](https://giphy.com).
-
-## Notes
-
-Originally the auto layout is not working and I spent another 3 hours figured out that it was the image that is having problem. Fixed it with didSet{}. 
+- [X] Table rows for search results should be dynamic height according to the content height.
+- [X] Custom cells should have the proper Auto Layout constraints.
 
 ## License
 
