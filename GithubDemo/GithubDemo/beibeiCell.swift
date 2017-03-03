@@ -25,6 +25,7 @@ class beibeiCell: UITableViewCell {
     var github: GithubRepo!{
         didSet{
             titleLabel.text = github.name
+            titleLabel.textColor = UIColor(hue: 2.7, saturation: 0.54, brightness: 1.0, alpha: 0.7)
             starLabel.text = String(describing: github.stars!)
             forkLabel.text = String(describing: github.forks!)
             descriptionLabel.text = github.descript!

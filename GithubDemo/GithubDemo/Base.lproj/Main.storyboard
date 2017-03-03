@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CD1-1A-j8H" id="5Wk-Yp-3mK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="hdfisuaghifuoag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfW-h2-TLk">
@@ -54,15 +54,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTC-rg-W9g">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTC-rg-W9g">
                                                     <rect key="frame" x="132" y="70" width="235" height="84"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="1" green="0.89756129179999999" blue="0.86592217979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="235" id="woV-q7-OD0"/>
                                                     </constraints>
                                                     <string key="text">fhasifguiasygfeoiagfiuleagfiuoagfuiwagfeuiwagfiuogeoiagpGFUegofsgeofhasifguiasygfeoiagfiuleagfiuoagfuiwagfeuiwagfiuogeoiagpGFUegofsgeofhasif</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="1" alpha="0.41079837330000002" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="by Origin" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-xK-s8q">
