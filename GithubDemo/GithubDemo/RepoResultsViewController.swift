@@ -24,19 +24,25 @@ protocol SettingsPresentingViewControllerDelegate: class {
 
 // Main ViewController
 class RepoResultsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, SettingsPresentingViewControllerDelegate {
+   
+    
     internal func didCancelSettings() {
-        doSearch()
-    }
-
-    internal func didSaveSettings(settings: GithubRepoSearchSettings) {
         
     }
 
 
+    internal func didSaveSettings(settings: GithubRepoSearchSettings) {
+        self.searchSettings = settings
+        doSearch()
+    }
+
+
     @IBOutlet weak var tableView: UITableView!
+    
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
-
+    var isSearching: Bool = false
+    
     var repos: [GithubRepo]!
 
     override func viewDidLoad() {
@@ -86,7 +92,7 @@ class RepoResultsViewController: UIViewController,UITableViewDataSource,UITableV
             self.tableView.reloadData()
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
-                print(error)
+                print(error?.localizedDescription ?? 0)
         })
     }
     
@@ -116,13 +122,14 @@ class RepoResultsViewController: UIViewController,UITableViewDataSource,UITableV
         return cell
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navController = segue.destinationViewController as! UINavigationController
+        let navController = segue.destination as! UINavigationController
         let vc = navController.topViewController as! SearchSettingsViewController
+        vc.settings = self.searchSettings
         vc.delegate = self
     }
-}
+
+ }
 
 // SearchBar methods
 extension RepoResultsViewController: UISearchBarDelegate {
@@ -140,6 +147,12 @@ extension RepoResultsViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.reloadData()
+
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

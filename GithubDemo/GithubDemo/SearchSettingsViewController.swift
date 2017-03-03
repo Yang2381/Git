@@ -10,8 +10,10 @@ import UIKit
 
 class SearchSettingsViewController: UIViewController {
     
+    @IBOutlet weak var numberLabel: UILabel!
     var delegate: SettingsPresentingViewControllerDelegate?
-
+    var settings: GithubRepoSearchSettings?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -22,6 +24,24 @@ class SearchSettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onSave(_ sender: Any) {
+        self.delegate?.didSaveSettings(settings: settings!)
+        self.dismiss(animated: true, completion: nil) //dismiss view controller
+    }
+   
+    
+    @IBAction func onCancel(_ sender: Any) {
+        self.delegate?.didCancelSettings()
+        self.dismiss(animated: true, completion: nil)
+    }
+   
+    @IBAction func onSlideBar(_ sender: Any) {
+        
+        let slider = sender as! UISlider
+        settings?.minStars = Int(slider.value * 1000.0)
+        numberLabel.text = "\(settings!.minStars)"
     }
     
     
